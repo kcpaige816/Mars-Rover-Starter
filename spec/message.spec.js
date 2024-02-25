@@ -1,5 +1,5 @@
 const Message = require('../message.js');
-const Command = require('../command.js');
+const Command = require('../command.js'); //do I need to call this into a test??
 
 describe("Message class", function() {
 
