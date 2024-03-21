@@ -8,13 +8,15 @@ describe("Message class", function() {
       });
 
     it("constructor sets name", function() {
-        let messageNameTest = new Message('Test Message', 'commands');
+        let commands = [new Command('STATUS_CHECK'), new Command('MODE_CHANGE', 'LOW_POWER')]
+        let messageNameTest = new Message('Test Message', commands);
         expect(messageNameTest.name).toEqual('Test Message');
       });
 
     it("contains a commands array passed into the constructor as the 2nd argument", function() {
-        let messageCommandsTest = new Message ('name', ['commands'])
-        expect(messageCommandsTest.commands).toEqual(['commands']);
+        let commands = [new Command('STATUS_CHECK'), new Command('MODE_CHANGE', 'LOW_POWER')]
+        let messageCommandsTest = new Message ('Name', commands)
+        expect(messageCommandsTest.commands).toEqual(commands);
     });
 
 });
